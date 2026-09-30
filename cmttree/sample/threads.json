@@ -1,0 +1,36 @@
+{
+  "format": "cmttree-sample-1",
+  "note": "一批扁平评论记录 + 一份树构建配置。记录字段名与 commentServe.py 的 (parent, who, when, content) 口径对齐；deleted 对应 db.py 里 type=spam 的那条标记。",
+  "config": {
+    "roots": ["no-parent", "deleted-parent"],
+    "dangling": "attach-root",
+    "selfParent": "root",
+    "cycle": "promote-min",
+    "maxDepth": 2,
+    "overDepth": "hoist",
+    "order": ["pinned-first", "at-desc", "votes-desc"],
+    "traversal": "preorder"
+  },
+  "records": [
+    {"id": "c-01", "parent": null, "author": "ann", "at": "2026-03-01T09:00:00Z", "votes": 3},
+    {"id": "c-02", "parent": "c-01", "author": "bo", "at": "2026-03-01T09:05:00Z", "votes": 7},
+    {"id": "c-03", "parent": "c-01", "author": "cy", "at": "2026-03-01T09:10:00Z", "votes": 1, "pinned": true},
+    {"id": "c-04", "parent": "c-02", "author": "dee", "at": "2026-03-01T09:20:00Z", "votes": 0},
+    {"id": "c-05", "parent": "c-03", "author": "ann", "at": "2026-03-01T09:30:00Z", "votes": 2},
+    {"id": "c-06", "parent": "c-05", "author": "bo", "at": "2026-03-01T09:40:00Z", "votes": 5},
+    {"id": "c-07", "parent": "c-99", "author": "dee", "at": "2026-03-01T09:50:00Z", "votes": 0},
+    {"id": "c-08", "parent": "c-01", "author": "eve", "votes": 1},
+    {"id": "c-09", "parent": "c-09", "author": "eve", "at": "2026-03-01T09:55:00Z", "votes": 0},
+    {"id": "c-10", "parent": "c-11", "author": "fay", "at": "2026-03-01T10:10:00Z", "votes": 2},
+    {"id": "c-11", "parent": "c-12", "author": "gil", "at": "2026-03-01T10:11:00Z", "votes": 0},
+    {"id": "c-12", "parent": "c-10", "author": "hal", "at": "2026-03-01T10:12:00Z", "votes": 1},
+    {"id": "c-13", "parent": "c-01", "author": "ivy", "at": "2026-03-01T10:00:00Z", "votes": 4},
+    {"id": "c-13", "parent": "c-01", "author": "ivy", "at": "2026-03-01T10:05:00Z", "votes": 9},
+    {"id": "c-14", "parent": "c-15", "author": "ivy", "at": "2026-03-01T10:30:00Z", "votes": 3},
+    {"id": "c-15", "parent": "c-01", "author": "jo", "at": "2026-03-01T10:20:00Z", "votes": 0, "deleted": true},
+    {"id": "c-16", "parent": null, "author": "kim", "at": "2026-03-01T11:00:00Z", "votes": 12, "pinned": true},
+    {"id": "c-17", "parent": "c-16", "author": "lea", "at": "2026-03-01T11:30:00Z", "votes": 1},
+    {"id": "c-18", "parent": "c-01", "author": "mo", "at": "2026-03-01T09:02:00Z", "votes": 4},
+    {"id": "c-19", "parent": "c-01", "author": "ned", "at": "2026-03-01T09:02:00Z", "votes": 4}
+  ]
+}
